@@ -9,11 +9,11 @@ public class AppInitializer {
 
         try (SessionFactory sf = HibernateUtil.getSessionFactory();
              Session session = sf.openSession()) {
-            session.beginTransaction();
+            //session.beginTransaction();
 
             System.out.println(session);
 
-            session.getTransaction().commit();
+            //session.getTransaction().commit();
         }
     }
 }
