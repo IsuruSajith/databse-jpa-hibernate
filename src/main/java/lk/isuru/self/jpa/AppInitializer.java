@@ -16,7 +16,8 @@ public class AppInitializer {
             Student isuru = new Student(1,"isuru");
             Bag addidas = new Bag(1, "addidas", isuru);
 
-            session.persist(isuru);
+            //session.persist(isuru);
+            session.persist(addidas);
 
             session.getTransaction().commit();
         }
