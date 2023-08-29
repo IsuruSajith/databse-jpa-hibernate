@@ -19,9 +19,12 @@ import java.sql.Time;
 @Entity
 public class Order {
     @Id
+    private
     int id;
     @Column(nullable = false)
+    private
     Date orderDate;
     @Column(nullable = false)
+    private
     Time time;
 }
