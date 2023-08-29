@@ -1,5 +1,7 @@
 package lk.isuru.self.jpa;
 
+import lk.isuru.self.jpa.entity.Bag;
+import lk.isuru.self.jpa.entity.Student;
 import lk.isuru.self.jpa.util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -9,11 +11,14 @@ public class AppInitializer {
 
         try (SessionFactory sf = HibernateUtil.getSessionFactory();
              Session session = sf.openSession()) {
-            //session.beginTransaction();
+            session.beginTransaction();
 
-            System.out.println(session);
+            Student isuru = new Student(1,"isuru");
+            Bag addidas = new Bag(1, "addidas", isuru);
 
-            //session.getTransaction().commit();
+            session.persist(isuru);
+
+            session.getTransaction().commit();
         }
     }
 }
