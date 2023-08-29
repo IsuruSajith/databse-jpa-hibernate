@@ -1,24 +1,31 @@
 package lk.isuru.self.jpa.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import jakarta.persistence.*;
+import lombok.*;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @Entity
+@ToString(exclude = "bag")
 @Table(name = "student")
 public class Student {
     @Id
-    int id;
+    private int id;
     @Column(nullable = false)
-    String name;
+    private String name;
 
+    @OneToOne(mappedBy = "student")
+    private Bag bag;
+
+    public Student(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public void setBag(Bag bag) {
+        bag.setStudent(this);
+        this.bag = bag;
+    }
 }

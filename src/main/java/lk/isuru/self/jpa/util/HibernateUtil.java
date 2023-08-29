@@ -1,5 +1,6 @@
 package lk.isuru.self.jpa.util;
 
+import lk.isuru.self.jpa.entity.Bag;
 import lk.isuru.self.jpa.entity.Student;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
@@ -17,7 +18,7 @@ public class HibernateUtil {
                 .build();
 
         Metadata metadata = new MetadataSources(standardRegistry)
-                //.addAnnotatedClass(Student.class)
+                .addAnnotatedClasses(Student.class, Bag.class)
                 .getMetadataBuilder()
                 .applyImplicitNamingStrategy(ImplicitNamingStrategyJpaCompliantImpl.INSTANCE)
                 .build();

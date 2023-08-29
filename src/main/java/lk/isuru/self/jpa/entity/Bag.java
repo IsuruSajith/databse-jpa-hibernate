@@ -1,9 +1,6 @@
 package lk.isuru.self.jpa.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -20,4 +17,10 @@ public class Bag {
     private int id;
     @Column(nullable = false)
     private String brand;
+
+    @OneToOne
+    @JoinColumn(nullable = false, name = "student_id", referencedColumnName = "id",unique = true)
+    private Student student;
+
+
 }
