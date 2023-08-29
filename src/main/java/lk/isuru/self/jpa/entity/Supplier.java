@@ -9,17 +9,13 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.sql.Date;
-import java.util.ArrayList;
-import java.util.List;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @Entity
-@Table(name = "customer")
-public class Customer {
+@Table(name = "supplier")
+public class Supplier {
     @Id
     private int id;
     @Column(nullable = false)
@@ -27,8 +23,5 @@ public class Customer {
     @Column(nullable = false)
     private String mobile;
     @Column(nullable = false)
-    private String address;
-    @Column(nullable = false)
-    private Date dob;
-
+    private String company;
 }
