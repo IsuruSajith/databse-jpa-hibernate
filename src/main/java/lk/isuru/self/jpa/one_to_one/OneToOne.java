@@ -1,4 +1,4 @@
-package lk.isuru.self.jpa;
+package lk.isuru.self.jpa.one_to_one;
 
 import lk.isuru.self.jpa.entity.Bag;
 import lk.isuru.self.jpa.entity.Student;
@@ -23,6 +23,8 @@ public class OneToOne {
             session.persist(addidas);
             session.persist(odel);
             //kasun.setBag(addidas);
+
+            //System.out.println(session.get(Student.class, 2).toString());
 
             session.getTransaction().commit();
         }
