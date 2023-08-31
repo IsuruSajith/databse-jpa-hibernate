@@ -12,7 +12,9 @@ public class OneToOne2 {
             Session session=sf.openSession()) {
             session.beginTransaction();
 
-            System.out.println(session.get(Student.class, 4).toString());
+            Student student2 = session.get(Student.class, 4);
+
+            System.out.println(student2.getBag().toString());
             Bag bag1 = session.get(Bag.class, 1);
             System.out.println(session.contains(bag1));
 
