@@ -22,5 +22,4 @@ public class Bag {
     @JoinColumn(nullable = false, name = "student_id", referencedColumnName = "id",unique = true)
     private Student student;
 
-
 }

@@ -6,10 +6,10 @@ import lk.isuru.self.jpa.util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-public class AppInitializer {
+public class OneToOne {
     public static void main(String[] args) {
 
-       /* try (SessionFactory sf = HibernateUtil.getSessionFactory();
+        try (SessionFactory sf = HibernateUtil.getSessionFactory();
              Session session = sf.openSession()) {
             session.beginTransaction();
 
@@ -25,6 +25,6 @@ public class AppInitializer {
             //kasun.setBag(addidas);
 
             session.getTransaction().commit();
-        }*/
+        }
     }
 }

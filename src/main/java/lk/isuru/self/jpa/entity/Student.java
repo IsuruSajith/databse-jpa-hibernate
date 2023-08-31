@@ -15,7 +15,6 @@ public class Student {
     private int id;
     @Column(nullable = false)
     private String name;
-
     @OneToOne(mappedBy = "student")
     private Bag bag;
 
@@ -23,8 +22,8 @@ public class Student {
         this.id = id;
         this.name = name;
     }
-
     public void setBag(Bag bag) {
+        System.out.println("======================================set bag method in student class is invoked===================================");
         bag.setStudent(this);
         this.bag = bag;
     }
