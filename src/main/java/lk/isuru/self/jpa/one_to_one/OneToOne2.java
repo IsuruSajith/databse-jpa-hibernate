@@ -1,5 +1,6 @@
 package lk.isuru.self.jpa.one_to_one;
 
+import lk.isuru.self.jpa.entity.Bag;
 import lk.isuru.self.jpa.entity.Student;
 import lk.isuru.self.jpa.util.HibernateUtil;
 import org.hibernate.Session;
@@ -12,6 +13,8 @@ public class OneToOne2 {
             session.beginTransaction();
 
             System.out.println(session.get(Student.class, 4).toString());
+            Bag bag1 = session.get(Bag.class, 1);
+            System.out.println(session.contains(bag1));
 
             session.getTransaction().commit();
 
