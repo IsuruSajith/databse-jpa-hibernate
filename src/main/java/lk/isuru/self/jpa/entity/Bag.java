@@ -18,8 +18,9 @@ public class Bag {
     @Column(nullable = false)
     private String brand;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(nullable = false, name = "student_id", referencedColumnName = "id",unique = true)
     private Student student;
+
 
 }
