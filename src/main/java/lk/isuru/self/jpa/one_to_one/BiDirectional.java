@@ -16,9 +16,11 @@ public class BiDirectional {
             Bag odelBag = session.get(Bag.class, 2);
            // odelBag.setStudent(dosi);
 
-            Student student1 = session.get(Student.class, 1);
-            student1.setBag(odelBag);
+            //Student student1 = session.get(Student.class, 1);
+            //student1.setBag(odelBag);
 
+            Student student4 = session.get(Student.class, 4);
+            odelBag.setStudent(student4);
             session.getTransaction().commit();
 
         }
