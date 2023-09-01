@@ -15,8 +15,7 @@ import lombok.NoArgsConstructor;
 public class Bag {
     @Id
     private int id;
-    @Column(nullable = false)
-    private String brand;
+    @Column(nullable = false)    private String brand;
 
     @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(nullable = false, name = "student_id", referencedColumnName = "id",unique = true)
