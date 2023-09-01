@@ -11,12 +11,13 @@ public class BiDirectional {
         try (SessionFactory sf = HibernateUtil.getSessionFactory(); Session session = sf.openSession()) {
             session.beginTransaction();
 
-            Student dosi = new Student(6, "Dosi");
-            session.persist(dosi);
+           /* Student dosi = new Student(6, "Dosi");
+            session.persist(dosi);*/
             Bag odelBag = session.get(Bag.class, 2);
-            odelBag.setStudent(dosi);
+           // odelBag.setStudent(dosi);
 
-            //session.get(S)
+            Student student1 = session.get(Student.class, 1);
+            student1.setBag(odelBag);
 
             session.getTransaction().commit();
 
